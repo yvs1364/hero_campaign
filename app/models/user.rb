@@ -1,7 +1,8 @@
 class User < ApplicationRecord
-has_one :breeds
+belongs_to :breed
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  validate :pseudo, presence: true, uniqueness: true
-  validate :level, presence: true
+  validates :pseudo, presence: true, uniqueness: true
+  validates :level, presence: true
+  # validates :breed, presence: true
 end
