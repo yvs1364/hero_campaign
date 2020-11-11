@@ -6,9 +6,9 @@ class RegistrationsController < Devise::RegistrationsController
 def create
   @user = User.new(sign_up_params)
   @user.level = 1
-  if @user.save! 
+  if @user.save!
     sign_in(@user)
-    redirect_to  "/"
+    redirect_to  new_adventure_path
   else
    redirect_to new_user_registration_path
   end

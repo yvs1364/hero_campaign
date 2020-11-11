@@ -1,9 +1,13 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+
     <% if user_signed_in? %>
+    <% @adventure = Adventure.all %>
     <% @user = current_user %>
+    <% @adventure.each do |ad|  %>
+    <h1><%= ad.name  %></h1>
+    <% end %>
     <h2> <%= @user.pseudo %></h2>
-    <p><%= @user.breed %></p>
-    <p><%= @user.category %></p>
+    <p><%= @user.breed %> <br> <%= @user.category %></p>
     <p><%= @user.level %></p>
     <% end %>
 

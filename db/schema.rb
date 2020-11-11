@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_08_153406) do
+ActiveRecord::Schema.define(version: 2020_11_08_190321) do
+
+  create_table "adventures", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_adventures_on_user_id"
+  end
 
   create_table "breeds", force: :cascade do |t|
     t.string "nameofbreed"
