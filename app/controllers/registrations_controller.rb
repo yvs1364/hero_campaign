@@ -8,7 +8,7 @@ def create
   @user.level = 1
   if @user.save!
     sign_in(@user)
-    redirect_to  new_adventure_path
+    redirect_to  adventures_path
   else
    redirect_to new_user_registration_path
   end

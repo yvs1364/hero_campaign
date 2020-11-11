@@ -7,7 +7,8 @@ class AdventuresController < ApplicationController
     end
     def create
         @adventure = Adventure.new(adventure_params)
-        @adventure.name = "legendary"
+        @adventure.name = "l"
+        Adventure.limit(1)
         @adventure.user_id = current_user.id
         if @adventure.save! 
            redirect_to  adventures_path
